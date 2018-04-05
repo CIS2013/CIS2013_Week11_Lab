@@ -3,10 +3,12 @@
 using namespace std;
 
 class BirthDate {
-	public:
+	private:
 		int year = 0;
 		int month = 0;
 		int day = 0;
+		
+	public:
 		void print(){
 			cout << month << "/" << day << "/" << year;
 		}
@@ -16,31 +18,27 @@ class BirthDate {
 			month = m;
 			day = d;
 		}
+		int get_year(){
+			return year;
+		}
+		void set_year(int y){
+			year = y;
+		}
 };
 
 int main(){
 	
-	BirthDate bob;
-	
-	cout << "Enter Bobs birthday day: ";
-	cin >> bob.day;
-	
-	cout << "Enter Bobs birthday year: ";
-	cin >> bob.year;
-	
-	cout << "Enter Bobs birthday month: ";
-	cin >> bob.month;
-	
-	cout << "Bob's birthday is ";
-	bob.print();
-	cout << endl;
-	
 	BirthDate tom;
 	cout << "Tom's birthday is ";
 	tom.print();
+	cout << endl;
 	tom.set(20, 5, 1984);
-	cout << "Tom's birthday is ";
+	cout << "Tom's birthday year is ";
+	cout << tom.get_year() << endl;
+	
+	tom.set_year(2001);
 	tom.print();
+	cout << endl;
 	
 	return 0;
 	
